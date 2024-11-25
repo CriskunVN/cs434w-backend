@@ -1,0 +1,16 @@
+server:
+  port: 8081
+
+spring:
+  datasource:
+    url: ${POSTGRES_URL:jdbc:postgresql://localhost:5432/db_cs434w}
+    username: ${POSTGRES_USER:postgres}
+    password: ${POSTGRES_PASSWORD:123456}
+
+  jpa:
+    properties:
+     hibernate:
+       dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    hibernate:
+          ddl-auto: none
