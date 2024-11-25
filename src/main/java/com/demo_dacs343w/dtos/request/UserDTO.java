@@ -9,7 +9,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.sql.Date;
 
-@Data
 @Getter
 @Setter
 @NoArgsConstructor
@@ -21,11 +20,15 @@ public class UserDTO {
     @NotBlank(message = "Password cannot be blank")
     private String password;
 
+    @JsonProperty("confirm_password")
+    private String confirmPassword;
+
     @NotBlank(message = "Email cannot be blank")
     private String email;
 
     @NotBlank(message = "Phone Number is blank")
     private String phone_number;
+
 
     @JsonProperty("fullname")
     private String fullName;
@@ -33,6 +36,7 @@ public class UserDTO {
     @NotNull(message = "dateOfBirth must be not null")
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     @JsonFormat(pattern = "MM/dd/yyyy")
+    @JsonProperty("dob")
     private Date dateOfBirth;
 
 

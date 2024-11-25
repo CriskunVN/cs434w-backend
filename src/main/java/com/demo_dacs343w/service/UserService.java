@@ -6,4 +6,5 @@ import org.springframework.stereotype.Service;
 @Service
 public interface UserService {
     long saveUser(UserDTO user);
+    Boolean loginUser(String phoneNumber, String password);
 }
