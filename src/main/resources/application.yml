@@ -6,9 +6,9 @@ spring:
 #    url: ${POSTGRES_URL:jdbc:postgresql://localhost:5432/db_cs434w}
 #    username: ${POSTGRES_USER:postgres}
 #    password: ${POSTGRES_PASSWORD:123456}
-    url: ${POSTGRES_URL:jdbc:postgresql://localhost:5432/db_cs434w}
-    username: ${POSTGRES_USER:postgres}
-    password: ${POSTGRES_PASSWORD:123456}
+    url: jdbc:mysql://junction.proxy.rlwy.net:24775/<database>
+    username: root
+    password: badajQigWsufzZTJvvufjpDyipcWrGLc
 
   jpa:
     properties:
