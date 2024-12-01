@@ -6,14 +6,19 @@ spring:
 #    url: ${POSTGRES_URL:jdbc:postgresql://localhost:5432/db_cs434w}
 #    username: ${POSTGRES_USER:postgres}
 #    password: ${POSTGRES_PASSWORD:123456}
-    url: jdbc:mysql://junction.proxy.rlwy.net:24775/<database>
+    url: jdbc:mysql://root:badajQigWsufzZTJvvufjpDyipcWrGLc@junction.proxy.rlwy.net:24775/railway
     username: root
     password: badajQigWsufzZTJvvufjpDyipcWrGLc
-
+    driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
+    hibernate:
+      ddl-auto: update
     properties:
      hibernate:
-       dialect: org.hibernate.dialect.PostgreSQLDialect
+       database-platform: org.hibernate.dialect.MySQL5Dialect
     show-sql: true
-    hibernate:
-          ddl-auto: none
+  sql:
+    init:
+      platform: mysql
+
+

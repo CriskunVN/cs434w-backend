@@ -13,7 +13,6 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
 
-    private static final Logger log = LoggerFactory.getLogger(UserServiceImpl.class);
     private final UserRepository userRepository;
 
     @Override
@@ -27,7 +26,7 @@ public class UserServiceImpl implements UserService {
                 .dob(userDTO.getDateOfBirth())
                 .build();
 
-        userRepository.save(user);
+        userRepository.saveAndFlush(user);
         return user.getId();
     }
 
