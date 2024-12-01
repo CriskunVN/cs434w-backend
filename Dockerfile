@@ -10,7 +10,7 @@ RUN mvn clean package -DskipTests
 FROM openjdk:17-jdk-slim
 WORKDIR /app
 
-COPY target/DrComputer-0.0.1-SNAPSHOT.jar /app/DrComputer.jar
+COPY target/demo_dacs343w-0.0.1-SNAPSHOT.jar-SNAPSHOT.jar /app/demo_dacs343w.jar
 EXPOSE 8080
 
-ENTRYPOINT ["java","-jar","drcomputer.jar"]
+ENTRYPOINT ["java","-jar","demo_dacs343w.jar"]
