@@ -1,16 +1,5 @@
-FROM maven:3-openjdk-17 AS build
-WORKDIR /app
-
-COPY . .
-RUN mvn clean package -DskipTests
-
-
-# Run stage
-
 FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 COPY target/demo_dacs343w-0.0.1-SNAPSHOT.jar-SNAPSHOT.jar /app/demo_dacs343w.jar
-EXPOSE 8080
-
-ENTRYPOINT ["java","-jar","demo_dacs343w.jar"]
+CMD ["java", "-jar", "/app/demo_dacs343w.jar"]
