@@ -3,19 +3,26 @@ server:
 
 spring:
   datasource:
-#    url: ${POSTGRES_URL:jdbc:postgresql://localhost:5432/db_cs434w}
-#    username: ${POSTGRES_USER:postgres}
-#    password: ${POSTGRES_PASSWORD:123456}
-    url: jdbc:mysql://root:badajQigWsufzZTJvvufjpDyipcWrGLc@junction.proxy.rlwy.net:24775/railway
-    username: root
-    password: badajQigWsufzZTJvvufjpDyipcWrGLc
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    # Postgres
+    url: jdbc:postgresql://dpg-ct725k08fa8c73cmon30-a.oregon-postgres.render.com:5432/demo_cs434w?sslmode=require
+    username: postgress
+    password: m5Or5Sd6juapFqVgqVrCcoEgmFuarvVq
+    driver-class-name: org.postgresql.Driver
+
+
+    # Mysql
+#    url: jdbc:mysql://root:badajQigWsufzZTJvvufjpDyipcWrGLc@junction.proxy.rlwy.net:24775/railway
+#    username: root
+#    password: badajQigWsufzZTJvvufjpDyipcWrGLc
+#    driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
       ddl-auto: update
     properties:
      hibernate:
-       database-platform: org.hibernate.dialect.MySQL5Dialect
+#       database-platform: org.hibernate.dialect.MySQL5Dialect
+       database-platform: org.hibernate.dialect.PostgreSQLDialect
+       format_sql: true
     show-sql: true
   sql:
     init:
