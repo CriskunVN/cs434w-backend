@@ -34,6 +34,10 @@ public class UserServiceImpl implements UserService {
     public Boolean loginUser(String phoneNumber , String password) {
 
         UserEntity userE = userRepository.findByPhoneNumber(phoneNumber);
+        if(userE == null) {
+            return false;
+        }
+
         if(!userE.getPassword().equals(password)) {
             return false;
         }

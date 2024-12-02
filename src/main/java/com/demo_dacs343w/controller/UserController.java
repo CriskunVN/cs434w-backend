@@ -46,7 +46,7 @@ public class UserController {
         try {
             Boolean token = userService.loginUser(user.getPhoneNumber(),user.getPassword());
             if(!token) {
-                return new ResponseError(HttpStatus.BAD_REQUEST.value(),"Wrong Password");
+                return new ResponseError(HttpStatus.BAD_REQUEST.value(),"Wrong Password or Phone Number");
             }
         } catch (Exception e) {
             return new ResponseError(HttpStatus.BAD_REQUEST.value() ,e.getMessage());
