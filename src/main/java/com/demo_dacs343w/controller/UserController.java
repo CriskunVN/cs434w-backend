@@ -54,6 +54,6 @@ public class UserController {
         return new ResponseData(HttpStatus.OK.value(), "Login Successful");
     }
 
-    @GetMappin
+
 
     }
