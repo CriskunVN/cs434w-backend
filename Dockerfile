@@ -1,5 +1,8 @@
-FROM openjdk:17-jdk-slim
+FROM openjdk:17-jre-slim
+
 WORKDIR /app
 
-COPY target/demo_dacs343w-0.0.1-SNAPSHOT.jar-SNAPSHOT.jar /app/demo_dacs343w.jar
-CMD ["java", "-jar", "/app/demo_dacs343w.jar"]
+ARG JAR_FILE=target/demo_dacs343w-0.0.1-SNAPSHOT.jar
+COPY ${JAR_FILE} /app/demo_dacs343w.jar
+
+ENTRYPOINT ["java", "-jar", "/app/demo_dacs343w.jar"]
