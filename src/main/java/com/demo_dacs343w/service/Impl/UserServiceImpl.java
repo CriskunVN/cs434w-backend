@@ -1,12 +1,14 @@
 package com.demo_dacs343w.service.Impl;
 
 import com.demo_dacs343w.dtos.request.UserDTO;
+import com.demo_dacs343w.exception.ResourceNotFoundException;
 import com.demo_dacs343w.models.UserEntity;
 import com.demo_dacs343w.repository.UserRepository;
 import com.demo_dacs343w.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.boot.context.config.ConfigDataResourceNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -42,5 +44,10 @@ public class UserServiceImpl implements UserService {
             return false;
         }
         return true;
+    }
+
+    @Override
+    public UserEntity findUserById(long id) {
+      return userRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("User not found"));
     }
 }
